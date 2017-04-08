@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+CWD=$(pwd)
+cd ~/projects/aroundtheworldwithrosieandmike.com/_site 
+s3cmd sync . s3://www.aroundtheworldwithrosieandmike.com
+cd $CWD

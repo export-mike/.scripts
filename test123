@@ -1,0 +1,2 @@
+filename="DSC_0422.JPG"
+echo $(echo "${filename%.*}" | sed -e 's/^[[:space:]0-9]*//;s/[[:space:]]*$//')

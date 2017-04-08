@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ffmpeg -i $1 -codec:v libx264 -profile:v high -preset slower -b:v 1000k -vf scale=-1:576 -threads 0 -b:a 196k $1.compressed.mp4

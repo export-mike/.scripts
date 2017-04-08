@@ -1,0 +1,2 @@
+echo $1
+sudo ifconfig en1 ether $1 

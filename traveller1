@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rsync -avz ~/projects/aroundtheworldwithrosieandmike.com/ /Volumes/Traveler1/roundtheworldwithrosieandmike.com
+rsync -avz ~/Pictures/RAW /Volumes/Traveler1/RAW/
+rsync -avz ~/Pictures/Rosie\'s\ iPhone /Volumes/Traveler1/RosiesIphone

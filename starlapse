@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ffmpeg -i $1 -filter:v "setpts=0.025*PTS" -an $1.starlapse.mp4

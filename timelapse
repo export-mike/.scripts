@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ffmpeg -i $1 -filter:v "setpts=0.125*PTS" -an $1.timelapse.mp4

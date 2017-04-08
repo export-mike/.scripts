@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+cd ~/Pictures/STAGING
+geotag
+
+mv ./* ~/Pictures/RAW/
+

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+rsync -avz ~/Pictures/RAW /Volumes/Traveller2/RAW/
+rsync -avz ~/Pictures/Rosie\'s\ iPhone /Volumes/Traveller2/RosiesIphone

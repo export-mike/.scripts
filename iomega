@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rsync -avz ~/Pictures/RAW /Volumes/Iomega_HDD/RAW/
+rsync -avz ~/Pictures/Rosie\'s\ iPhone /Volumes/Iomega_HDD/RosiesIphone
+

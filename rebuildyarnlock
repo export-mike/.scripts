@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rm yarn.lock && yarn && git add yarn.lock

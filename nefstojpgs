@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+mkdir ./JPGS
+for img in *.NEF; do exiftool -b -JpgFromRaw "$img" > "./JPGS/$img.jpg"; done
+#for i in *.NEF; do sips -s format jpeg $i --out "./JPGS/${i%.*}.jpg"; done

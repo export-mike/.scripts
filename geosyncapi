@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+GEOTAG_PARAM=''
+
+for direct in *; do
+
+ if [[ -d "$direct" && ! -L "$direct" ]]; then
+  echo "checking directory $direct";
+
+  ## find GPX files
+  for gpxfile in $direct/*.gpx; do
+    if [[ -f "$gpxfile" && ! -L "$gpxfile" ]]; then
+      echo "$gpxfile found";
+      GEOTAG_PARAM="$GEOTAG_PARAM -geotag $gpxfile";
+    fi;
+  done;
+ fi;
+done;
+## exiftool
+exiftool -overwrite_original $GEOTAG_PARAM **/*.JPG **/*.NEF **/*.MOV
+
+# rsync to RAW
+rsync -avz * ~/Pictures/RAW
+
+## JPG compression
+
+tar -czvf archive.tar.gz *
+mkdir -p ~/.geoblog/archive
+mv archive.tar.gz ~/.geoblog/archive
+echo "Archived staging area to ~/.geoblog/archive";
+
+## Clean
+rm -rf *
+echo "Cleaned staging area";
+
+## sync
+s3cmd sync ~/.geoblog/archive s3://travelblogphotos
+echo "sync with s3 complete";
+echo "removing archive folder";
+rm -rf ~/.geoblog/archive
